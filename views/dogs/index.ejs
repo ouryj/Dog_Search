@@ -1,0 +1,14 @@
+<% include ../partials/header %>
+<h1>find your doggy below</h1>
+<div>
+    <% dogs.forEach((dog)=>{ %>
+      <h4><%=dog.name%></h4>
+      <img src="<%=dog.image%>" alt="">
+      <p><%=dog.age%></p>
+      <p><%dog.owner%></p>
+      <a class="indexbutton" href="/dogs/<%=dog._id%>">More info</a>
+  <%  }) %>
+</div>
+
+
+<% include ../partials/footer  %>

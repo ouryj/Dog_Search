@@ -1,0 +1,11 @@
+<% include ../partials/header %>
+<h1>comment to <%=dog.name%></h1>
+<form action="/dogs/<%=dog._id%>/comments" method="post">
+    <input type="text" name="text" placeholder="leave your comment here " id="">
+   
+ 
+    <button type="submit">add comment</button>
+
+</form>
+
+<% include ../partials/footer%>

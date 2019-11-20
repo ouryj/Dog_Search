@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+<h1><%=dog.name%></h1>
+<img src="<%=dog.image%>" alt="">
+<p><%=dog.age%></p>
+<p>posted by <%=dog.owner.username%></p>
+<em><%=dog.created.toDateString()%></em>
+<div>
+    <a href="/dogs/<%=dog._id%>/edit" class="editbutton">edit</a>
+    <form action="/dogs/<%=dog._id%>?_method=delete" method="post">
+        <button class="delete">delete</button>
+    </form>
+</div>
+<div>
+    <a class="comment" href="/dogs/<%=dog._id%>/comments/new">add comment</a>
+    <ul>
+        <% dog.comments.forEach(function(comment){ %>
+        <li><strong><%=comment.author.username%></strong>- <%=comment.text%></li>
+       <% })%>
+    </ul>
+</div>
+
+<% include ../partials/footer %>

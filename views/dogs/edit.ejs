@@ -1,0 +1,15 @@
+<% include ../partials/header %>
+<h1><%=dog.name%></h1>
+<form action="/dogs/<%=dog._id%>?_method=put" method="post">
+
+    <input type="text" name="dog[name]"  value="<%=dog.name%>" id="">
+    <input type="date" name="dog[age]"  value="<%=dog.age%>" id="">
+    <input type="text" name="dog[image]" value="<%=dog.image%>" id="">
+    <input type="text" name="dog[owner]" value="<%=dog.owner%>" id="">
+    <button type="submit">update dog</button>
+
+</form>
+
+
+
+<% include ../partials/footer %>
